@@ -8,6 +8,22 @@ import gsap from 'gsap'
 export const App: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null)
   const lenisRef = useRef<Lenis | null>(null)
+  const clienteleScrollRef = useRef<HTMLDivElement>(null)
+  const moviesScrollRef = useRef<HTMLDivElement>(null)
+
+  const scrollNext = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      const scrollAmount = ref.current.clientWidth * 0.8
+      ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+    }
+  }
+
+  const scrollPrev = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      const scrollAmount = ref.current.clientWidth * 0.8
+      ref.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+    }
+  }
 
   useEffect(() => {
     const cursor = cursorRef.current
@@ -556,48 +572,81 @@ export const App: React.FC = () => {
                     <h3 className="text-3xl font-bold text-white md:text-4xl">
                       Clientele
                     </h3>
-                    <button className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={3}
-                        stroke="currentColor"
-                        className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => scrollPrev(clienteleScrollRef)}
+                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          stroke="currentColor"
+                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:-translate-x-1 rotate-180"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => scrollNext(clienteleScrollRef)}
+                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          stroke="currentColor"
+                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
-                  <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar md:flex-wrap md:overflow-visible md:pb-0 lg:gap-8">
-                    {[
-                      { src: '/images/logo1.webp', alt: 'Prime Video' },
-                      { src: '/images/logo2.jpg', alt: 'Apple TV' },
-                      { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
-                      { src: '/images/logo4.jpg', alt: 'Sony LIV' },
-                      { src: '/images/logo5.jpg', alt: 'Xstream Play' },
-                      { src: '/images/logo6.webp', alt: 'Manorama' },
-                      { src: '/images/logo7.webp', alt: 'MX Player' },
-                      { src: '/images/logo8.webp', alt: 'Sun Next' },
-                      { src: '/images/logo9.webp', alt: 'Aha' },
-                      { src: '/images/logo10.webp', alt: 'Shemaroo' },
-                    ].map((logo, idx) => (
-                      <div
-                        key={idx}
-                        className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
-                      >
-                        <img
-                          src={logo.src}
-                          alt={logo.alt}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    ))}
+                  <div
+                    ref={clienteleScrollRef}
+                    className="group/scroll relative overflow-hidden"
+                  >
+                    <div className="animate-marquee-slow flex gap-4 py-4 pause-on-hover">
+                      {[...Array(2)].map((_, i) => (
+                        <React.Fragment key={i}>
+                          {[
+                            { src: '/images/logo1.webp', alt: 'Prime Video' },
+                            { src: '/images/logo2.jpg', alt: 'Apple TV' },
+                            { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
+                            { src: '/images/logo4.jpg', alt: 'Sony LIV' },
+                            { src: '/images/logo5.jpg', alt: 'Xstream Play' },
+                            { src: '/images/logo6.webp', alt: 'Manorama' },
+                            { src: '/images/logo7.webp', alt: 'MX Player' },
+                            { src: '/images/logo8.webp', alt: 'Sun Next' },
+                            { src: '/images/logo9.webp', alt: 'Aha' },
+                            { src: '/images/logo10.webp', alt: 'Shemaroo' },
+                          ].map((logo, idx) => (
+                            <div
+                              key={`${i}-${idx}`}
+                              className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
+                            >
+                              <img
+                                src={logo.src}
+                                alt={logo.alt}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </React.Fragment>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
@@ -607,44 +656,77 @@ export const App: React.FC = () => {
                     <h3 className="text-3xl font-bold text-white md:text-4xl">
                       Movies
                     </h3>
-                    <button className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={3}
-                        stroke="currentColor"
-                        className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => scrollPrev(moviesScrollRef)}
+                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          stroke="currentColor"
+                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:-translate-x-1 rotate-180"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => scrollNext(moviesScrollRef)}
+                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={3}
+                          stroke="currentColor"
+                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
 
-                  <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-6 md:overflow-visible md:pb-0 lg:gap-6">
-                    {[
-                      '/images/movie1.jpg',
-                      '/images/movie2.webp',
-                      '/images/movie3.webp',
-                      '/images/movie4.webp',
-                      '/images/movie5.webp',
-                      '/images/movie6.webp',
-                    ].map((src, idx) => (
-                      <div
-                        key={idx}
-                        className="aspect-[2/3] w-[180px] shrink-0 overflow-hidden rounded-2xl bg-black/40 shadow-lg ring-1 ring-white/10 transition-transform duration-300 hover:scale-105 sm:w-[220px] md:w-auto"
-                      >
-                        <img
-                          src={src}
-                          alt={`Movie poster ${idx + 1}`}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    ))}
+                  <div
+                    ref={moviesScrollRef}
+                    className="group/scroll relative overflow-hidden"
+                  >
+                    <div className="animate-marquee-slow flex gap-4 py-4 pause-on-hover [animation-direction:reverse]">
+                      {[...Array(2)].map((_, i) => (
+                        <React.Fragment key={i}>
+                          {[
+                            '/images/movie1.jpg',
+                            '/images/movie2.webp',
+                            '/images/movie3.webp',
+                            '/images/movie4.webp',
+                            '/images/movie5.webp',
+                            '/images/movie6.webp',
+                          ].map((src, idx) => (
+                            <div
+                              key={`${i}-${idx}`}
+                              className="aspect-[2/3] w-[180px] shrink-0 overflow-hidden rounded-2xl bg-black/40 shadow-lg ring-1 ring-white/10 transition-transform duration-300 hover:scale-105 sm:w-[220px] md:w-auto md:h-80"
+                            >
+                              <img
+                                src={src}
+                                alt={`Movie poster ${idx + 1}`}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </React.Fragment>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
