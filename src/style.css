@@ -59,7 +59,7 @@
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     overscroll-behavior: auto !important;
-    touch-action: pan-y !important;
+    touch-action: pan-x pan-y !important;
   }
 
   /* Standardized Scrollbar Styling */
