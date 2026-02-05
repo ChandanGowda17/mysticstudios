@@ -574,17 +574,22 @@ export const App: React.FC = () => {
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:flex md:flex-wrap md:gap-8">
+                  <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar md:flex-wrap md:overflow-visible md:pb-0 lg:gap-8">
                     {[
                       { src: '/images/logo1.webp', alt: 'Prime Video' },
                       { src: '/images/logo2.jpg', alt: 'Apple TV' },
                       { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
                       { src: '/images/logo4.jpg', alt: 'Sony LIV' },
                       { src: '/images/logo5.jpg', alt: 'Xstream Play' },
+                      { src: '/images/logo6.webp', alt: 'Manorama' },
+                      { src: '/images/logo7.webp', alt: 'MX Player' },
+                      { src: '/images/logo8.webp', alt: 'Sun Next' },
+                      { src: '/images/logo9.webp', alt: 'Aha' },
+                      { src: '/images/logo10.webp', alt: 'Shemaroo' },
                     ].map((logo, idx) => (
                       <div
                         key={idx}
-                        className="flex aspect-square h-20 w-auto items-center justify-center overflow-hidden rounded-2xl bg-black md:h-24 md:w-24 border border-white/10 transition hover:scale-105"
+                        className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
                       >
                         <img
                           src={logo.src}
@@ -620,7 +625,7 @@ export const App: React.FC = () => {
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6 lg:gap-6">
+                  <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar md:grid md:grid-cols-6 md:overflow-visible md:pb-0 lg:gap-6">
                     {[
                       '/images/movie1.jpg',
                       '/images/movie2.webp',
@@ -631,7 +636,7 @@ export const App: React.FC = () => {
                     ].map((src, idx) => (
                       <div
                         key={idx}
-                        className="aspect-[2/3] overflow-hidden rounded-2xl bg-black/40 shadow-lg ring-1 ring-white/10 transition-transform duration-300 hover:scale-105"
+                        className="aspect-[2/3] w-[180px] shrink-0 overflow-hidden rounded-2xl bg-black/40 shadow-lg ring-1 ring-white/10 transition-transform duration-300 hover:scale-105 sm:w-[220px] md:w-auto"
                       >
                         <img
                           src={src}
