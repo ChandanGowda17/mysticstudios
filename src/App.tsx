@@ -611,45 +611,22 @@ export const App: React.FC = () => {
                     <h3 className="text-3xl font-bold text-white md:text-4xl">
                       Clientele
                     </h3>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => scrollPrev(clienteleScrollRef)}
-                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
+                    <div className="flex items-center gap-2 pb-1 text-white/40">
+                      <span className="text-xs font-semibold tracking-widest uppercase">Scroll</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2.5}
+                        stroke="currentColor"
+                        className="h-4 w-4 animate-bounce-x"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={3}
-                          stroke="currentColor"
-                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:-translate-x-1 rotate-180"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </button>
-                      <button
-                        onClick={() => scrollNext(clienteleScrollRef)}
-                        className="group flex items-center justify-center rounded-full transition hover:bg-white/10 p-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={3}
-                          stroke="currentColor"
-                          className="h-8 w-8 text-cyan-500 transition-transform duration-300 group-hover:translate-x-1"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </button>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                        />
+                      </svg>
                     </div>
                   </div>
 
