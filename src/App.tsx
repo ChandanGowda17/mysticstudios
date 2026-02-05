@@ -655,37 +655,32 @@ export const App: React.FC = () => {
 
                   <div
                     ref={clienteleScrollRef}
-                    className="group/scroll relative overflow-hidden"
+                    className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar scroll-smooth"
+                    data-lenis-prevent
                   >
-                    <div className="animate-marquee-slow flex gap-4 py-4 pause-on-hover">
-                      {[...Array(2)].map((_, i) => (
-                        <React.Fragment key={i}>
-                          {[
-                            { src: '/images/logo1.webp', alt: 'Prime Video' },
-                            { src: '/images/logo2.jpg', alt: 'Apple TV' },
-                            { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
-                            { src: '/images/logo4.jpg', alt: 'Sony LIV' },
-                            { src: '/images/logo5.jpg', alt: 'Xstream Play' },
-                            { src: '/images/logo6.webp', alt: 'Manorama' },
-                            { src: '/images/logo7.webp', alt: 'MX Player' },
-                            { src: '/images/logo8.webp', alt: 'Sun Next' },
-                            { src: '/images/logo9.webp', alt: 'Aha' },
-                            { src: '/images/logo10.webp', alt: 'Shemaroo' },
-                          ].map((logo, idx) => (
-                            <div
-                              key={`${i}-${idx}`}
-                              className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
-                            >
-                              <img
-                                src={logo.src}
-                                alt={logo.alt}
-                                className="h-full w-full object-cover"
-                              />
-                            </div>
-                          ))}
-                        </React.Fragment>
-                      ))}
-                    </div>
+                    {[
+                      { src: '/images/logo1.webp', alt: 'Prime Video' },
+                      { src: '/images/logo2.jpg', alt: 'Apple TV' },
+                      { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
+                      { src: '/images/logo4.jpg', alt: 'Sony LIV' },
+                      { src: '/images/logo5.jpg', alt: 'Xstream Play' },
+                      { src: '/images/logo6.webp', alt: 'Manorama' },
+                      { src: '/images/logo7.webp', alt: 'MX Player' },
+                      { src: '/images/logo8.webp', alt: 'Sun Next' },
+                      { src: '/images/logo9.webp', alt: 'Aha' },
+                      { src: '/images/logo10.webp', alt: 'Shemaroo' },
+                    ].map((logo, idx) => (
+                      <div
+                        key={idx}
+                        className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
+                      >
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
 
