@@ -635,27 +635,30 @@ export const App: React.FC = () => {
                     className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar-x"
                   >
                     {[
-                      { src: '/images/logo1.webp', alt: 'Prime Video' },
-                      { src: '/images/logo2.jpg', alt: 'Apple TV' },
-                      { src: '/images/logo3.webp', alt: 'Disney Hotstar' },
-                      { src: '/images/logo4.jpg', alt: 'Sony LIV' },
-                      { src: '/images/logo5.jpg', alt: 'Xstream Play' },
-                      { src: '/images/logo6.webp', alt: 'Manorama' },
-                      { src: '/images/logo7.webp', alt: 'MX Player' },
-                      { src: '/images/logo8.webp', alt: 'Sun Next' },
-                      { src: '/images/logo9.webp', alt: 'Aha' },
-                      { src: '/images/logo10.webp', alt: 'Shemaroo' },
+                      { src: '/images/logo1.webp', alt: 'Prime Video', url: 'https://www.primevideo.com' },
+                      { src: '/images/logo2.jpg', alt: 'Apple TV', url: 'https://tv.apple.com/' },
+                      { src: '/images/logo3.webp', alt: 'Disney Hotstar', url: 'https://www.hotstar.com' },
+                      { src: '/images/logo4.jpg', alt: 'Sony LIV', url: 'https://www.sonyliv.com' },
+                      { src: '/images/logo5.jpg', alt: 'Xstream Play', url: 'https://www.airtelxstream.in/' },
+                      { src: '/images/logo6.webp', alt: 'Manorama', url: 'https://www.manoramamax.com/' },
+                      { src: '/images/logo7.webp', alt: 'MX Player', url: 'https://www.mxplayer.in/' },
+                      { src: '/images/logo8.webp', alt: 'Sun Next', url: 'https://www.sunnxt.com/' },
+                      { src: '/images/logo9.webp', alt: 'Aha', url: 'https://www.aha.video/' },
+                      { src: '/images/logo10.webp', alt: 'Shemaroo', url: 'https://www.shemaroome.com/' },
                     ].map((logo, idx) => (
-                      <div
+                      <a
                         key={idx}
-                        className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 md:h-24 md:w-24"
+                        href={logo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex aspect-square h-20 w-auto shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black transition hover:scale-105 hover:border-pink-500/50 md:h-24 md:w-24"
                       >
                         <img
                           src={logo.src}
                           alt={logo.alt}
                           className="h-full w-full object-cover"
                         />
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
