@@ -913,7 +913,7 @@ export const App: React.FC = () => {
           />
 
           {/* Modal Content */}
-          <div className="relative mx-auto max-h-[80vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl no-scrollbar">
+          <div className="relative mx-auto max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl custom-scrollbar">
             {/* Close Button */}
             <button
               onClick={() => setSelectedService(null)}
@@ -936,7 +936,7 @@ export const App: React.FC = () => {
             </button>
 
             {/* Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 pb-4">
               <h2 className="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl pr-10">
                 {servicesData[selectedService].title}
               </h2>
