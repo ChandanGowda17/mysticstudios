@@ -632,7 +632,7 @@ export const App: React.FC = () => {
 
                   <div
                     ref={clienteleScrollRef}
-                    className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar-x scroll-smooth"
+                    className="flex gap-4 overflow-x-auto py-4 custom-scrollbar-x"
                     data-lenis-prevent
                   >
                     {[

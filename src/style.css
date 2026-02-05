@@ -45,21 +45,21 @@
 
   /* Vertical Scrollbar Utility */
   .custom-scrollbar-y {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: pan-y;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
   }
 
   /* Horizontal Scrollbar Utility */
   .custom-scrollbar-x {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: pan-x;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-x !important;
   }
 
-  /* Standardized Scrollbar Styling for both variants */
+  /* Standardized Scrollbar Styling */
   .custom-scrollbar-y::-webkit-scrollbar,
   .custom-scrollbar-x::-webkit-scrollbar {
     width: 6px;
