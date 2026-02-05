@@ -722,6 +722,21 @@ export const App: React.FC = () => {
                             '/images/movie4.webp',
                             '/images/movie5.webp',
                             '/images/movie6.webp',
+                            '/images/movie7.jpg',
+                            '/images/movie8.jpg',
+                            '/images/movie9.jpg',
+                            '/images/movie10.jpg',
+                            '/images/movie11.jpg',
+                            '/images/movie12.jpg',
+                            '/images/movie13.jpg',
+                            '/images/movie14.JPG',
+                            '/images/movie15.jpg',
+                            '/images/movie16.jpg',
+                            '/images/movie17.jpg',
+                            '/images/movie18.jpg',
+                            '/images/movie19.jpg',
+                            '/images/movie20.webp',
+                            '/images/movie21.webp',
                           ].map((src, idx) => (
                             <div
                               key={`${i}-${idx}`}
