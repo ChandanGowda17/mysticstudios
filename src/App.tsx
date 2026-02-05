@@ -913,7 +913,10 @@ export const App: React.FC = () => {
           />
 
           {/* Modal Content */}
-          <div className="relative mx-auto max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl custom-scrollbar">
+          <div
+            data-lenis-prevent
+            className="relative mx-auto max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl custom-scrollbar"
+          >
             {/* Close Button */}
             <button
               onClick={() => setSelectedService(null)}

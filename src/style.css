@@ -43,6 +43,12 @@
     animation-play-state: paused;
   }
 
+  .custom-scrollbar {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
