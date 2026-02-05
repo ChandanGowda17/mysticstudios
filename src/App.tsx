@@ -701,9 +701,9 @@ export const App: React.FC = () => {
                       href="https://www.mysticartstudios.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex w-fit items-center gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-6 py-4 backdrop-blur-sm transition hover:bg-pink-600/10"
+                      className="group flex w-full sm:w-fit items-center gap-2 md:gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-4 py-3 md:px-6 md:py-4 backdrop-blur-sm transition hover:bg-pink-600/10"
                     >
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center text-white">
+                      <div className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -712,20 +712,20 @@ export const App: React.FC = () => {
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="h-6 w-6"
+                          className="h-5 w-5 md:h-6 md:w-6"
                         >
                           <circle cx="12" cy="12" r="10" />
                           <line x1="2" y1="12" x2="22" y2="12" />
                           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                         </svg>
                       </div>
-                      <span className="text-xl font-bold text-white group-hover:text-pink-300">
+                      <span className="break-all text-base md:text-xl font-bold text-white group-hover:text-pink-300">
                         www.mysticartstudios.com
                       </span>
                     </a>
 
                     {/* Phone Button */}
-                    <div className="flex w-fit items-center gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-6 py-4 backdrop-blur-sm transition hover:bg-black/50">
+                    <div className="flex w-full sm:w-fit items-center gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-6 py-4 backdrop-blur-sm transition hover:bg-black/50">
                       <div className="flex h-6 w-6 shrink-0 items-center justify-center text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -749,20 +749,20 @@ export const App: React.FC = () => {
                     {/* Email Button */}
                     <a
                       href="mailto:buzz.mysticartstudio@gmail.com"
-                      className="group flex w-fit items-center gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-6 py-4 backdrop-blur-sm transition hover:bg-pink-600/10"
+                      className="group flex w-full sm:w-fit items-center gap-2 md:gap-4 rounded-2xl border border-pink-500/30 bg-black/40 px-4 py-3 md:px-6 md:py-4 backdrop-blur-sm transition hover:bg-pink-600/10"
                     >
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center text-white">
+                      <div className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          className="h-6 w-6"
+                          className="h-5 w-5 md:h-6 md:w-6"
                         >
                           <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                           <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                         </svg>
                       </div>
-                      <span className="text-xl font-bold text-white group-hover:text-pink-300">
+                      <span className="break-all text-base md:text-xl font-bold text-white group-hover:text-pink-300">
                         buzz.mysticartstudio@gmail.com
                       </span>
                     </a>
