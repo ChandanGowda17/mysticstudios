@@ -606,7 +606,7 @@ export const App: React.FC = () => {
 
               <div className="mx-auto w-full max-w-none space-y-20">
                 {/* Clientele Row */}
-                <div className="space-y-8" data-lenis-prevent>
+                <div className="space-y-8 relative" data-lenis-prevent>
                   <div className="flex items-center justify-between">
                     <h3 className="text-3xl font-bold text-white md:text-4xl">
                       Clientele

@@ -43,7 +43,7 @@
     animation-play-state: paused;
   }
 
-  /* Vertical Scrollbar Utility */
+  /* Vertical Scrollbar Utility - Used for Modals */
   .custom-scrollbar-y {
     overflow-y: auto !important;
     overflow-x: hidden !important;
@@ -52,13 +52,14 @@
     touch-action: pan-y !important;
   }
 
-  /* Horizontal Scrollbar Utility */
+  /* Horizontal Scrollbar Utility - Used for Clientele/Movies */
+  /* We use pan-y to allow the page to scroll vertically even if the user swipes over these rows */
   .custom-scrollbar-x {
     overflow-x: auto !important;
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
-    overscroll-behavior: contain !important;
-    touch-action: pan-x !important;
+    overscroll-behavior: auto !important;
+    touch-action: pan-y !important;
   }
 
   /* Standardized Scrollbar Styling */
