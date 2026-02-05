@@ -632,7 +632,7 @@ export const App: React.FC = () => {
 
                   <div
                     ref={clienteleScrollRef}
-                    className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar scroll-smooth"
+                    className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar-x scroll-smooth"
                     data-lenis-prevent
                   >
                     {[
@@ -887,7 +887,7 @@ export const App: React.FC = () => {
           {/* Modal Content */}
           <div
             data-lenis-prevent
-            className="relative mx-auto max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl custom-scrollbar"
+            className="relative mx-auto max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl custom-scrollbar-y"
           >
             {/* Close Button */}
             <button

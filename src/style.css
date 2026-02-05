@@ -43,27 +43,43 @@
     animation-play-state: paused;
   }
 
-  .custom-scrollbar {
+  /* Vertical Scrollbar Utility */
+  .custom-scrollbar-y {
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     touch-action: pan-y;
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
+  /* Horizontal Scrollbar Utility */
+  .custom-scrollbar-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-x;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
+  /* Standardized Scrollbar Styling for both variants */
+  .custom-scrollbar-y::-webkit-scrollbar,
+  .custom-scrollbar-x::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar-y::-webkit-scrollbar-track,
+  .custom-scrollbar-x::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
+  .custom-scrollbar-y::-webkit-scrollbar-thumb,
+  .custom-scrollbar-x::-webkit-scrollbar-thumb {
     background: rgba(236, 72, 153, 0.3);
     border-radius: 10px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  .custom-scrollbar-y::-webkit-scrollbar-thumb:hover,
+  .custom-scrollbar-x::-webkit-scrollbar-thumb:hover {
     background: rgba(236, 72, 153, 0.5);
   }
 
