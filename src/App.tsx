@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import gsap from 'gsap'
@@ -10,6 +10,27 @@ export const App: React.FC = () => {
   const lenisRef = useRef<Lenis | null>(null)
   const clienteleScrollRef = useRef<HTMLDivElement>(null)
   const moviesScrollRef = useRef<HTMLDivElement>(null)
+
+  const [selectedService, setSelectedService] = useState<number | null>(null)
+
+  const servicesData = [
+    {
+      title: 'Strategic OTT & Digital Distribution',
+      content: 'We collaborate closely with film producers at every stage of the content lifecycle—strategically positioning, packaging, and placing films and digital content across leading OTT platforms and digital applications. Our role extends far beyond simple facilitation. We function as long-term strategic partners, combining market insight, platform intelligence, and timing precision to ensure each project finds its ideal audience. By aligning the creative vision with platform requirements, audience behavior, and release strategy, we help maximize visibility, engagement, and commercial potential—making sure the right content reaches the right platform, at the right moment, with the greatest impact.'
+    },
+    {
+      title: 'Channel Partnerships',
+      content: '• The exclusive channel partner for Amazon Prime Video and SonyLIV across South India during their critical growth and expansion phases\n• A trusted strategic channel partner for multiple leading OTT platforms and digital applications\n\nThese partnerships are founded on long-standing credibility, consistent delivery excellence, and a deep, operational understanding of platform expectations—enabling seamless collaboration and sustained value creation for both content creators and platforms.'
+    },
+    {
+      title: 'Producer Liaison & Market Advisory',
+      content: 'From deal structuring and rights evaluation to platform alignment and release strategy, we support producers across every stage of the OTT journey. Our role combines deep market intelligence with hands-on negotiation support and end-to-end execution oversight. By bridging creative intent with commercial realities, we help producers navigate platform expectations, optimize deal outcomes, and ensure smooth, timely delivery—maximizing both reach and long-term value.'
+    },
+    {
+      title: 'Film Production',
+      content: 'Drawing on years of hands-on experience in content distribution, platform strategy, and audience behavior, Mystic Art Studios is now expanding into film production. Our production philosophy is rooted in the seamless blend of compelling storytelling and market-aware execution. By aligning creative vision with audience insights and platform dynamics, we develop content that is artistically resonant, strategically positioned, and commercially viable—designed to travel across platforms while retaining its creative integrity.'
+    }
+  ]
 
   const scrollNext = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
@@ -93,6 +114,12 @@ export const App: React.FC = () => {
 
     lenisRef.current = lenis
 
+    if (selectedService !== null) {
+      lenis.stop()
+    } else {
+      lenis.start()
+    }
+
     function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -110,7 +137,7 @@ export const App: React.FC = () => {
       })
       lenis.destroy()
     }
-  }, [])
+  }, [selectedService])
 
   return (
     <>
@@ -360,7 +387,10 @@ export const App: React.FC = () => {
                         Strategic OTT &amp; Digital Distribution
                       </span>
                     </div>
-                    <button className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10">
+                    <button
+                      onClick={() => setSelectedService(0)}
+                      className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10"
+                    >
                       LEARN MORE
                     </button>
                   </div>
@@ -379,7 +409,10 @@ export const App: React.FC = () => {
                         Channel Partnerships
                       </span>
                     </div>
-                    <button className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10">
+                    <button
+                      onClick={() => setSelectedService(1)}
+                      className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10"
+                    >
                       LEARN MORE
                     </button>
                   </div>
@@ -398,7 +431,10 @@ export const App: React.FC = () => {
                         Producer Liaison &amp; Market Advisory
                       </span>
                     </div>
-                    <button className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10">
+                    <button
+                      onClick={() => setSelectedService(2)}
+                      className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10"
+                    >
                       LEARN MORE
                     </button>
                   </div>
@@ -417,7 +453,10 @@ export const App: React.FC = () => {
                         Film Production
                       </span>
                     </div>
-                    <button className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10">
+                    <button
+                      onClick={() => setSelectedService(3)}
+                      className="rounded-full bg-white/5 px-6 py-2 text-xs font-semibold tracking-wide text-white/70 shadow-inner transition hover:bg-white/10"
+                    >
                       LEARN MORE
                     </button>
                   </div>
@@ -864,6 +903,51 @@ export const App: React.FC = () => {
           </main>
         </div>
       </div>
+      {/* Service Detail Modal */}
+      {selectedService !== null && (
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center px-6 py-10">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-xl transition-opacity duration-300"
+            onClick={() => setSelectedService(null)}
+          />
+
+          {/* Modal Content */}
+          <div className="relative mx-auto max-h-[80vh] w-full max-w-4xl overflow-y-auto rounded-[40px] border border-white/10 bg-[#0a0a0a] p-8 md:p-12 shadow-2xl no-scrollbar">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedService(null)}
+              className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 hover:bg-white/10 hover:text-white transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-extrabold text-white md:text-5xl lg:text-6xl pr-10">
+                {servicesData[selectedService].title}
+              </h2>
+              <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-fuchsia-500 rounded-full" />
+              <div className="text-lg leading-relaxed text-slate-200 md:text-xl whitespace-pre-line">
+                {servicesData[selectedService].content}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }
