@@ -606,7 +606,7 @@ export const App: React.FC = () => {
 
               <div className="mx-auto w-full max-w-none space-y-20">
                 {/* Clientele Row */}
-                <div className="space-y-8">
+                <div className="space-y-8" data-lenis-prevent>
                   <div className="flex items-center justify-between">
                     <h3 className="text-3xl font-bold text-white md:text-4xl">
                       Clientele
@@ -632,8 +632,7 @@ export const App: React.FC = () => {
 
                   <div
                     ref={clienteleScrollRef}
-                    className="flex gap-4 overflow-x-auto py-4 custom-scrollbar-x"
-                    data-lenis-prevent
+                    className="flex gap-4 overflow-x-auto py-4 no-scrollbar custom-scrollbar-x"
                   >
                     {[
                       { src: '/images/logo1.webp', alt: 'Prime Video' },
