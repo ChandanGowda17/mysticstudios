@@ -12,6 +12,7 @@ export const App: React.FC = () => {
   const moviesScrollRef = useRef<HTMLDivElement>(null)
 
   const [selectedService, setSelectedService] = useState<number | null>(null)
+  const [scrolled, setScrolled] = useState(false)
 
   const servicesData = [
     {
@@ -91,6 +92,11 @@ export const App: React.FC = () => {
       })
     }
 
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
     window.addEventListener('mousemove', moveCursor)
     document.body.addEventListener('mouseenter', handleMouseEnter)
     document.body.addEventListener('mouseleave', handleMouseLeave)
@@ -128,6 +134,7 @@ export const App: React.FC = () => {
     requestAnimationFrame(raf)
 
     return () => {
+      window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('mousemove', moveCursor)
       document.body.removeEventListener('mouseenter', handleMouseEnter)
       document.body.removeEventListener('mouseleave', handleMouseLeave)
@@ -146,6 +153,57 @@ export const App: React.FC = () => {
         className="pointer-events-none fixed left-0 top-0 z-[1000] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 bg-white/10 opacity-0 transition-opacity duration-300 backdrop-blur-[2px]"
       />
 
+      {/* Top bar (Fixed) */}
+      <header
+        className={`fixed left-0 top-0 z-[500] w-full transition-all duration-300 ${scrolled ? 'bg-black/80 py-3 backdrop-blur-md shadow-lg' : 'bg-transparent py-6'
+          }`}
+      >
+        <div className="mx-auto flex w-full max-w-none items-center justify-between gap-4 px-6 md:px-12 lg:px-24">
+          {/* Logo / brand */}
+          <div
+            className="group flex cursor-pointer items-center gap-2 md:gap-4 transition-transform hover:scale-105 shrink-0"
+            onClick={() => lenisRef.current?.scrollTo('#hero')}
+          >
+            <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center overflow-hidden rounded-full">
+              <img
+                src="/images/logo.png"
+                alt="Mystic Art Studios Logo"
+                className="h-full w-full object-contain filter drop-shadow-lg"
+              />
+            </div>
+            <span className="text-lg md:text-xl font-bold tracking-tight text-white drop-shadow-md whitespace-nowrap">
+              Mystic Art Studios
+            </span>
+          </div>
+
+          {/* Navigation Bar */}
+          <nav className="hidden md:block lg:pr-20 overflow-hidden">
+            <ul className="flex items-center gap-4 lg:gap-10">
+              {[
+                { name: 'About', href: '#about' },
+                { name: 'Our Story', href: '#story' },
+                { name: 'What We Do', href: '#what-we-do' },
+                { name: 'Movies', href: '#clientele-movies' },
+                { name: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <li key={link.name} className="shrink-0">
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      lenisRef.current?.scrollTo(link.href)
+                    }}
+                    className="text-xs lg:text-lg font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] whitespace-nowrap"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </header>
+
       <div className="min-h-screen text-slate-50">
         {/* Full-screen landing hero */}
         <section
@@ -163,52 +221,9 @@ export const App: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/40" />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full w-full max-w-none flex-col px-6 pb-6 pt-[50px] md:px-12 lg:px-24 md:pt-[50px] md:pb-10">
-            {/* Top bar */}
-            <div className="flex items-center justify-between gap-4">
-              {/* Logo / brand */}
-              <div className="group flex cursor-pointer items-center gap-2 md:gap-4 transition-transform hover:scale-105 shrink-0">
-                <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center overflow-hidden rounded-full">
-                  <img
-                    src="/images/logo.png"
-                    alt="Mystic Art Studios Logo"
-                    className="h-full w-full object-contain filter drop-shadow-lg"
-                  />
-                </div>
-                <span className="text-lg md:text-xl font-bold tracking-tight text-white drop-shadow-md whitespace-nowrap">
-                  Mystic Art Studios
-                </span>
-              </div>
-
-              {/* Navigation Bar */}
-              <nav className="hidden md:block lg:pr-20 overflow-hidden">
-                <ul className="flex items-center gap-4 lg:gap-10">
-                  {[
-                    { name: 'About', href: '#about' },
-                    { name: 'Our Story', href: '#story' },
-                    { name: 'What We Do', href: '#what-we-do' },
-                    { name: 'Movies', href: '#clientele-movies' },
-                    { name: 'Contact', href: '#contact' },
-                  ].map((link) => (
-                    <li key={link.name} className="shrink-0">
-                      <a
-                        href={link.href}
-                        onClick={(e) => {
-                          e.preventDefault()
-                          lenisRef.current?.scrollTo(link.href)
-                        }}
-                        className="text-xs lg:text-lg font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] whitespace-nowrap"
-                      >
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-
+          <div className="relative z-10 flex h-full w-full max-w-none flex-col px-6 pb-6 pt-[120px] md:px-12 lg:px-24 md:pt-[150px] md:pb-10">
             {/* Main heading */}
-            <div className="mb-32 flex flex-col items-end pt-[100px]">
+            <div className="mb-32 flex flex-col items-end">
               <div className="max-w-2xl text-left">
                 <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl">
                   Where Cinema
@@ -217,7 +232,7 @@ export const App: React.FC = () => {
                   <br />
                   of Distribution
                 </h1>
-                <p className="mt-6 text-base font-medium text-slate-100 pt-[100px] md:text-lg">
+                <p className="mt-6 text-base font-medium text-slate-100 pt-[60px] md:text-lg">
                   Channel Partner &amp; A Production House
                 </p>
               </div>
@@ -227,8 +242,6 @@ export const App: React.FC = () => {
 
         {/* Rest of the page content */}
         <div className="relative">
-
-
           <main className="relative z-10 flex flex-col">
 
             {/* Who We Are section */}
@@ -943,4 +956,3 @@ export const App: React.FC = () => {
     </>
   )
 }
-
