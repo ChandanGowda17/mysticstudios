@@ -227,19 +227,28 @@ export const App: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         <div
-          className={`md:hidden fixed top-0 right-0 h-screen w-auto bg-black/95 backdrop-blur-lg transition-all duration-500 ease-in-out shadow-2xl ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          className={`md:hidden fixed top-0 right-0 h-screen w-auto min-w-[280px] bg-gradient-to-br from-black via-gray-900 to-black backdrop-blur-xl transition-all duration-500 ease-in-out shadow-2xl border-l border-pink-500/20 ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
             }`}
           style={{ zIndex: 550 }}
         >
-          <nav className="px-8 py-24 h-full flex items-center">
-            <ul className="flex flex-col space-y-6">
+          {/* Decorative gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-pink-500/5 via-transparent to-fuchsia-500/5 pointer-events-none" />
+
+          <nav className="relative px-8 pt-24 pb-8 h-full flex flex-col justify-start">
+            {/* Menu Title */}
+            <div className="mb-8 pb-4 border-b border-white/10">
+              <h3 className="text-sm font-bold uppercase tracking-widest text-white/50">Menu</h3>
+            </div>
+
+            {/* Navigation Links */}
+            <ul className="flex flex-col space-y-2">
               {[
                 { name: 'About', href: '#about' },
                 { name: 'Our Story', href: '#story' },
                 { name: 'What We Do', href: '#what-we-do' },
                 { name: 'Movies', href: '#clientele-movies' },
                 { name: 'Contact', href: '#contact' },
-              ].map((link) => (
+              ].map((link, index) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
@@ -248,13 +257,23 @@ export const App: React.FC = () => {
                       lenisRef.current?.scrollTo(link.href)
                       setMobileMenuOpen(false)
                     }}
-                    className="block text-xl font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white hover:translate-x-2 py-2 whitespace-nowrap"
+                    className="group relative block text-xl font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white py-4 px-4 rounded-lg hover:bg-white/5 whitespace-nowrap"
+                    style={{
+                      transitionDelay: mobileMenuOpen ? `${index * 50}ms` : '0ms'
+                    }}
                   >
-                    {link.name}
+                    <span className="relative z-10">{link.name}</span>
+                    {/* Hover gradient effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-500/10 to-fuchsia-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                   </a>
                 </li>
               ))}
             </ul>
+
+            {/* Decorative bottom element */}
+            <div className="mt-auto pt-8">
+              <div className="h-1 w-20 bg-gradient-to-r from-pink-500 to-fuchsia-500 rounded-full" />
+            </div>
           </nav>
         </div>
       </header>
