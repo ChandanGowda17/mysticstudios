@@ -13,6 +13,7 @@ export const App: React.FC = () => {
 
   const [selectedService, setSelectedService] = useState<number | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const servicesData = [
     {
@@ -177,6 +178,7 @@ export const App: React.FC = () => {
           </div>
 
           {/* Navigation Bar */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:block lg:pr-20 overflow-hidden">
             <ul className="flex items-center gap-4 lg:gap-10">
               {[
@@ -194,6 +196,59 @@ export const App: React.FC = () => {
                       lenisRef.current?.scrollTo(link.href)
                     }}
                     className="text-xs lg:text-lg font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] whitespace-nowrap"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden flex flex-col items-center justify-center w-10 h-10 space-y-1.5 z-[600]"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''
+                }`}
+            />
+            <span
+              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`}
+            />
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        <div
+          className={`md:hidden fixed top-0 right-0 h-screen w-auto bg-black/95 backdrop-blur-lg transition-all duration-500 ease-in-out shadow-2xl ${mobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+            }`}
+          style={{ zIndex: 550 }}
+        >
+          <nav className="px-8 py-24 h-full flex items-center">
+            <ul className="flex flex-col space-y-6">
+              {[
+                { name: 'About', href: '#about' },
+                { name: 'Our Story', href: '#story' },
+                { name: 'What We Do', href: '#what-we-do' },
+                { name: 'Movies', href: '#clientele-movies' },
+                { name: 'Contact', href: '#contact' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      lenisRef.current?.scrollTo(link.href)
+                      setMobileMenuOpen(false)
+                    }}
+                    className="block text-xl font-bold uppercase tracking-widest text-white/70 transition-all duration-300 hover:text-white hover:translate-x-2 py-2 whitespace-nowrap"
                   >
                     {link.name}
                   </a>
