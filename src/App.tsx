@@ -582,8 +582,8 @@ export const App: React.FC = () => {
                     strategic partners, ensuring the right content reaches the
                     right platform at the right time.
                   </p>
-                  {/* Cyan Accent Dot */}
-                  <div className="mt-2 h-6 w-6 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]" />
+
+
                 </div>
 
                 {/* Block 2: Channel Partnerships */}
@@ -622,16 +622,11 @@ export const App: React.FC = () => {
               {/* Top Right Pink Glow */}
               <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-pink-600/20 blur-3xl filter animate-pulse" />
               {/* Bottom Left Pink Glow */}
-              <div className="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl filter animate-pulse delay-1000" />
+              <div className="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl filter animate-pulse delay-700" />
 
 
 
-              {/* Bottom Left Dot Matrix Pattern */}
-              <div className="absolute bottom-10 left-6 grid grid-cols-6 gap-2 md:left-12">
-                {[...Array(24)].map((_, i) => (
-                  <span key={i} className="h-1 w-1 rounded-full bg-white/30" />
-                ))}
-              </div>
+
 
               <div className="mx-auto w-full max-w-none space-y-24">
                 {/* Block 1: Producer Liaison */}
@@ -676,20 +671,6 @@ export const App: React.FC = () => {
               {/* Bottom Left Pink Glow */}
               <div className="absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl filter" />
 
-              {/* Top Right Dots */}
-              <div className="absolute top-10 right-10 hidden gap-4 md:flex">
-                <span className="h-1.5 w-1.5 rounded-full ring-2 ring-white/60" />
-                <span className="h-1.5 w-1.5 rounded-full ring-2 ring-white/60" />
-                <span className="h-1.5 w-1.5 rounded-full ring-2 ring-white/60" />
-                <span className="h-1.5 w-1.5 rounded-full ring-2 ring-white/60" />
-              </div>
-
-              {/* Bottom Left Dot Matrix Pattern */}
-              <div className="absolute bottom-10 left-6 grid grid-cols-6 gap-2 md:left-12">
-                {[...Array(24)].map((_, i) => (
-                  <span key={i} className="h-1 w-1 rounded-full bg-white/30" />
-                ))}
-              </div>
 
               <div className="mx-auto w-full max-w-none space-y-20">
                 {/* Clientele Row */}
@@ -699,7 +680,7 @@ export const App: React.FC = () => {
                       Clientele
                     </h3>
                     <div className="flex items-center gap-2 pb-1 text-white/40">
-                      <span className="text-xs font-semibold tracking-widest uppercase">Scroll</span>
+
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
