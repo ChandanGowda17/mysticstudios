@@ -299,16 +299,17 @@ export const App: React.FC = () => {
             {/* Main heading */}
             <div className="mb-32 flex flex-col items-end">
               <div className="max-w-2xl text-left">
-                <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+                <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-7xl">
                   Where Cinema
                   <br />
                   Meets the Future
                   <br />
                   of Distribution
                 </h1>
-                <p className="mt-6 text-base font-medium text-slate-100 pt-[60px] md:text-lg">
+                <p className="mt-6 pt-[60px] text-2xl md:text-3xl font-semibold text-slate-100 tracking-wide">
                   Channel Partner &amp; A Production House
                 </p>
+
               </div>
             </div>
           </div>
@@ -327,7 +328,7 @@ export const App: React.FC = () => {
               <div className="mx-auto flex w-full max-w-none flex-col gap-10 lg:flex-row lg:items-start">
                 {/* Left text column */}
                 <div className="w-full lg:w-[70%]">
-                  <h2 className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-9xl">
+                  <h2 className="text-xl font-bold tracking-tight text-white sm:text-6xl lg:text-6xl xl:text-7xl">
                     Who We Are
                   </h2>
                   <div className="mt-10 space-y-8 text-xl leading-relaxed text-slate-100 lg:text-2xl">
@@ -410,11 +411,11 @@ export const App: React.FC = () => {
               style={{ backgroundImage: "url('/images/bg2.png')" }}
             >
               <div className="mx-auto flex w-full max-w-none flex-col">
-                <h2 className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-9xl">
+                <h2 className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl">
                   Our Story
                 </h2>
 
-                <div className="mt-10 space-y-10 text-2xl leading-tight text-slate-50 lg:text-4xl">
+                <div className="mt-10 space-y-10 text-2xl leading-tight text-slate-50 lg:text-2.5xl">
                   <p>
                     Mystic Art Studios was founded in 2016 under the leadership of Managing
                     Director Venkkatesh K Achharya, with a clear vision to redefine film
@@ -452,7 +453,7 @@ export const App: React.FC = () => {
               <div className="mx-auto w-full max-w-none">
                 {/* Header */}
                 <div className="mb-12 flex items-center justify-between">
-                  <h2 className="text-5xl font-extrabold uppercase tracking-tight text-white sm:text-7xl lg:text-9xl">
+                  <h2 className="text-5xl font-extrabold uppercase tracking-tight text-white sm:text-7xl lg:text-6xl">
                     What We Do
                   </h2>
 
@@ -554,7 +555,7 @@ export const App: React.FC = () => {
             {/* Detailed Services Section */}
             <section
               id="detailed-services"
-              className="relative flex min-h-screen flex-col justify-start overflow-hidden bg-cover bg-center px-6 py-20 md:px-12 lg:px-24 md:py-24"
+              className="relative flex min-h-screen flex-col justify-start overflow-hidden bg-cover bg-center px-6 py-16 md:px-12 lg:px-24 md:py-20"
               style={{ backgroundImage: "url('/images/bg2.png')" }}
             >
 
@@ -570,12 +571,12 @@ export const App: React.FC = () => {
               <div className="mx-auto w-full max-w-none space-y-24">
                 {/* Block 1: Strategic OTT */}
                 <div className="relative flex flex-col items-start gap-4 md:max-w-3xl lg:max-w-4xl">
-                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
                     Strategic OTT &amp;
                     <br />
                     Digital Distribution
                   </h3>
-                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-2xl">
+                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-xl">
                     We work closely with film producers to position, package,
                     and place content across leading OTT platforms and digital
                     applications. Our role goes beyond facilitation, we act as
@@ -588,10 +589,10 @@ export const App: React.FC = () => {
 
                 {/* Block 2: Channel Partnerships */}
                 <div className="relative flex flex-col items-start gap-4 md:ml-auto md:max-w-3xl lg:max-w-4xl">
-                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
                     Channel Partnerships
                   </h3>
-                  <div className="text-xl leading-relaxed text-slate-200 lg:text-2xl">
+                  <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
                     <p className="mb-4">Mystic Art Studio has served as:</p>
                     <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300">
                       <li>
@@ -615,7 +616,7 @@ export const App: React.FC = () => {
             {/* Production Services Section */}
             <section
               id="production-services"
-              className="relative flex min-h-screen flex-col justify-start overflow-hidden bg-cover bg-center px-6 py-20 md:px-12 lg:px-24 md:py-24"
+              className="relative flex min-h-screen flex-col justify-start overflow-hidden bg-cover bg-center px-6 py-16 md:px-12 lg:px-24 md:py-20"
               style={{ backgroundImage: "url('/images/bg2.png')" }}
             >
               {/* Background Decorations */}
@@ -631,12 +632,12 @@ export const App: React.FC = () => {
               <div className="mx-auto w-full max-w-none space-y-24">
                 {/* Block 1: Producer Liaison */}
                 <div className="relative flex flex-col items-start gap-4 md:max-w-3xl lg:max-w-4xl">
-                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
                     Producer Liaison &amp;
                     <br />
                     Market Advisory
                   </h3>
-                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-2xl">
+                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-xl">
                     From deal structuring to platform alignment, we support
                     producers through every stage of the OTT journey offering
                     market insights, negotiation support, and execution oversight.
@@ -645,10 +646,10 @@ export const App: React.FC = () => {
 
                 {/* Block 2: Film Production */}
                 <div className="relative flex flex-col items-start gap-4 md:ml-auto md:max-w-3xl lg:max-w-4xl md:items-end md:text-right">
-                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-7xl">
+                  <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
                     Film Production
                   </h3>
-                  <p className="text-xl leading-relaxed text-slate-200 lg:text-2xl">
+                  <p className="text-xl leading-relaxed text-slate-200 lg:text-xl">
                     Leveraging years of hands-on experience in content distribution
                     and audience behavior, Mystic Art Studios is now expanding into
                     film production. Our production philosophy blends creative
