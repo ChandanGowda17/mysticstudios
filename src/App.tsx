@@ -328,9 +328,11 @@ export const App: React.FC = () => {
               <div className="mx-auto flex w-full max-w-none flex-col gap-10 lg:flex-row lg:items-start">
                 {/* Left text column */}
                 <div className="w-full lg:w-[70%]">
-                  <h2 className="text-xl font-bold tracking-tight text-white sm:text-6xl lg:text-6xl xl:text-7xl">
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-white">
                     Who We Are
                   </h2>
+
+
                   <div className="mt-10 space-y-8 text-xl leading-relaxed text-slate-100 lg:text-2xl">
                     <p>
                       A pioneering force in India&apos;s film and entertainment ecosystem,
