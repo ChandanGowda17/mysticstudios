@@ -179,7 +179,7 @@ export const App: React.FC = () => {
 
           {/* Navigation Bar */}
           {/* Desktop Navigation */}
-          <nav className="hidden md:block lg:pr-20 overflow-hidden">
+          <nav className="hidden md:block lg:pr-0 overflow-hidden">
             <ul className="flex items-center gap-4 lg:gap-10">
               {[
                 { name: 'About', href: '#about' },
@@ -595,7 +595,7 @@ export const App: React.FC = () => {
                     Channel Partnerships
                   </h3>
                   <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
-                    <p className="mb-4">Mystic Art Studio has served as:</p>
+                    <p className="mb-4">Mystic Art Studios has served as:</p>
                     <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300">
                       <li>
                         The only channel partner for Amazon Prime Video and
@@ -711,7 +711,6 @@ export const App: React.FC = () => {
                       { src: '/images/logo3.webp', alt: 'Disney Hotstar', url: 'https://www.hotstar.com' },
                       { src: '/images/logo4.jpg', alt: 'Sony LIV', url: 'https://www.sonyliv.com' },
                       { src: '/images/logo5.jpg', alt: 'Xstream Play', url: 'https://www.airtelxstream.in/' },
-                      { src: '/images/logo6.webp', alt: 'Manorama', url: 'https://www.manoramamax.com/' },
                       { src: '/images/logo7.webp', alt: 'MX Player', url: 'https://www.mxplayer.in/' },
                       { src: '/images/logo8.webp', alt: 'Sun Next', url: 'https://www.sunnxt.com/' },
                       { src: '/images/logo9.webp', alt: 'Aha', url: 'https://www.aha.video/' },
@@ -852,7 +851,7 @@ export const App: React.FC = () => {
                       Whether you are a film producer looking for the right
                       distribution partner, an OTT platform seeking reliable content
                       collaborations, or an investor exploring opportunities in a
-                      rapidly evolving industry, Mystic Art Studio welcomes the
+                      rapidly evolving industry, Mystic Art Studios welcomes the
                       conversation.
                     </p>
                   </div>
@@ -928,7 +927,7 @@ export const App: React.FC = () => {
                       </div>
                       <div className="flex flex-col text-xl font-bold text-white">
                         <span>+91 9606589112</span>
-                        <span>+91 9880187222</span>
+                        <span>+91 9108480222</span>
                       </div>
                     </div>
 
@@ -949,7 +948,7 @@ export const App: React.FC = () => {
                         </svg>
                       </div>
                       <span className="break-all text-base md:text-xl font-bold text-white group-hover:text-pink-300">
-                        buzz.mysticartstudio@gmail.com
+                        buzz.mysticartstudios@gmail.com
                       </span>
                     </a>
                   </div>
