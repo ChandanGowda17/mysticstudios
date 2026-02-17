@@ -167,7 +167,7 @@ export const App: React.FC = () => {
           >
             <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center overflow-hidden ">
               <img
-                src="/images/logo.png"
+                src="/images/logo.png?v=2"
                 alt="Mystic Art Studios Logo"
                 className="h-full w-full object-contain filter drop-shadow-lg"
               />
@@ -578,15 +578,27 @@ export const App: React.FC = () => {
                     <br />
                     Digital Distribution
                   </h3>
-                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-xl">
-                    We work closely with film producers to position, package,
-                    and place content across leading OTT platforms and digital
-                    applications. Our role goes beyond facilitation, we act as
-                    strategic partners, ensuring the right content reaches the
-                    right platform at the right time.
-                  </p>
-
-
+                  <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
+                    <p className="mb-4">At Mystic Art Studios, digital distribution is driven by analysis, positioning, and timing. Every project begins with a structured content assessment that evaluates genre viability, target demographics, language reach, and monetization potential across streaming ecosystems.We conduct platform mapping to determine the most suitable OTT partner based on programming strategy, audience demand, and acquisition appetite. This ensures that content is not simply placed, but strategically aligned for visibility and commercial return.</p>
+                    <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300"> Our execution process includes:
+                      <li>
+                        Rights evaluation and territory structuring
+                      </li>
+                      <li>
+                        Revenue model assessment (licensing, hybrid, or digital-first release strategy)
+                      </li>
+                      <li>
+                        Risk mitigation through rights clarity and documentation accuracy
+                      </li>
+                      <li>
+                        Asset management and submission oversight
+                      </li>
+                      <li>Release timing optimization</li>
+                    </ul>
+                    <p>
+                      We operate with a long-term perspective — maximizing lifecycle value across primary digital release, secondary licensing, and future rights monetization.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Block 2: Channel Partnerships */}
@@ -595,20 +607,28 @@ export const App: React.FC = () => {
                     Channel Partnerships
                   </h3>
                   <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
-                    <p className="mb-4">Mystic Art Studios has served as:</p>
+                    <p className="mb-4">Our platform relationships are built on sustained trust, consistent delivery standards, and operational discipline. During pivotal phases of OTT expansion in India, Mystic Art Studios played a strategic role in connecting curated regional content with major streaming platforms.
+
+                      As a channel intermediary, we understand both the creative aspirations of producers and the structured acquisition frameworks of platforms. This dual understanding enables smoother negotiations, faster turnaround cycles, and structured deal execution.
+
+                      Our partnership model focuses on:</p>
                     <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300">
                       <li>
-                        The only channel partner for Amazon Prime Video and
-                        SonyLIV across South India during critical growth phases
+                        Our platform relationships are built on sustained trust, consistent delivery standards, and operational discipline. During pivotal phases of OTT expansion in India, Mystic Art Studios played a strategic role in connecting curated regional content with major streaming platforms.
+                        Our partnership model focuses on:
                       </li>
                       <li>
-                        A trusted channel partner for multiple OTT platforms and
-                        digital apps
+                        Efficient content evaluation pipelines
+                      </li>
+                      <li>
+                        Risk mitigation through rights clarity and documentation accuracy
+                      </li>
+                      <li>
+                        Alignment with evolving platform programming strategies
                       </li>
                     </ul>
                     <p>
-                      These relationships are built on credibility, delivery excellence,
-                      and a deep understanding of platform expectations.
+                      Rather than operating on a transactional basis, we cultivate long-term ecosystem relationships that evolve alongside market dynamics.
                     </p>
                   </div>
                 </div>
@@ -639,25 +659,59 @@ export const App: React.FC = () => {
                     <br />
                     Market Advisory
                   </h3>
-                  <p className="max-w-2xl text-xl leading-relaxed text-slate-200 lg:text-xl">
-                    From deal structuring to platform alignment, we support
-                    producers through every stage of the OTT journey offering
-                    market insights, negotiation support, and execution oversight.
-                  </p>
+                  <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
+                    <p className="mb-4">Navigating the OTT ecosystem requires more than access — it requires strategy. We guide producers through the commercial and structural complexities of digital distribution, ensuring informed decision-making at every stage.</p>
+                    <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300">Our advisory support includes:
+                      <li>
+                        Pre-release digital viability assessment
+                      </li>
+                      <li>
+                        Budget-to-revenue alignment strategy
+                      </li>
+                      <li>
+                        Platform negotiation preparation
+                      </li>
+                      <li>
+                        Contract structuring insights
+                      </li>
+                      <li>Revenue forecasting based on genre and market trends</li>
+                    </ul>
+                    <p>
+                      We also provide insight into audience behavior patterns, emerging platform preferences, and evolving licensing structures — enabling producers to optimize both creative and financial outcomes.
+
+                      From early-stage discussions to final execution, we act as structured representatives, safeguarding producer interests while maintaining platform confidence.                    </p>
+                  </div>
                 </div>
 
                 {/* Block 2: Film Production */}
-                <div className="relative flex flex-col items-start gap-4 md:ml-auto md:max-w-3xl lg:max-w-4xl md:items-end md:text-right">
+                <div className="relative flex flex-col items-start gap-4 md:ml-auto md:max-w-3xl lg:max-w-4xl">
                   <h3 className="text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl lg:text-5xl">
-                    Film Production
+                    Channel Partnerships
                   </h3>
-                  <p className="text-xl leading-relaxed text-slate-200 lg:text-xl">
-                    Leveraging years of hands-on experience in content distribution
-                    and audience behavior, Mystic Art Studios is now expanding into
-                    film production. Our production philosophy blends creative
-                    storytelling with market-aware execution, ensuring content is
-                    both artistically strong and commercially viable.
-                  </p>
+                  <div className="text-xl leading-relaxed text-slate-200 lg:text-xl">
+                    <p className="mb-4">Building on years of distribution intelligence and audience insights, Mystic Art Studios is strategically expanding into original film production. Our approach integrates creative development with market viability from inception.</p>
+                    <ul className="mb-6 list-outside list-disc space-y-3 pl-8 text-slate-300">Each project undergoes:
+                      <li>
+                        Concept viability evaluation
+                      </li>
+                      <li>
+                        Audience segmentation analysis
+                      </li>
+                      <li>
+                        Platform-oriented development planning
+                      </li>
+                      <li>
+                        Budget discipline aligned with revenue pathways
+                      </li>
+                      <li>
+                        Integrated distribution planning from pre-production stage
+                      </li>
+                    </ul>
+                    <p>
+                      We believe content today must be developed with a multi-window lifecycle in mind — theatrical potential, digital acquisition, satellite scope, and international opportunities.
+
+                      Our production vision balances storytelling depth with financial prudence, ensuring that every project is positioned for both artistic merit and sustainable commercial performance.                    </p>
+                  </div>
                 </div>
               </div>
             </section>
