@@ -165,11 +165,11 @@ export const App: React.FC = () => {
             className="group flex cursor-pointer items-center gap-2 md:gap-4 transition-transform hover:scale-105 shrink-0"
             onClick={() => lenisRef.current?.scrollTo('#hero')}
           >
-            <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center overflow-hidden ">
+            <div className="flex h-16 w-16 md:h-24 md:w-24 items-center justify-center overflow-hidden">
               <img
-                src="/images/logo.png?v=2"
+                src="/images/final-logo.png?v=3"
                 alt="Mystic Art Studios Logo"
-                className="h-full w-full object-contain filter drop-shadow-lg"
+                className="h-full w-full object-contain scale-115 filter drop-shadow-lg"
               />
             </div>
             <span className="text-lg md:text-xl font-bold tracking-tight text-white drop-shadow-md whitespace-nowrap">
